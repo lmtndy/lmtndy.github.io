@@ -3,13 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lam Tan Duy</title>
-<meta name="description" content="Lam Tan Duy — AI Engineer in Ho Chi Minh City. Production computer vision on factory lines, and LLM systems: RAG, agents, fine-tuning.">
+<title>Lam Tan Duy · AI Engineer</title>
+<meta name="description" content="Lam Tan Duy, AI Engineer in Ho Chi Minh City. Production computer vision on factory lines, and LLM systems: RAG, agents, fine-tuning.">
+<meta name="author" content="Lam Tan Duy">
+<link rel="canonical" href="https://lmtndy.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Lam Tan Duy · AI Engineer">
+<meta property="og:description" content="Production computer vision on factory lines, and LLM systems: RAG, agents, fine-tuning.">
+<meta property="og:url" content="https://lmtndy.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f1f3f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1218" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lam Tan Duy",
+  "jobTitle": "AI Engineer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Ho Chi Minh City", "addressCountry": "VN" },
+  "alumniOf": "Ho Chi Minh City University of Technology",
+  "url": "https://lmtndy.github.io/",
+  "sameAs": ["https://github.com/lmtndy", "https://www.linkedin.com/in/duy-l%C3%A2m-9b45a3234/"]
+}
+</script>
 <style>
-/* Layout: one left-aligned column; the name sits inside a detection box, results read like an eval log. */
+/* Layout: one left-aligned column; the portrait sits in a detection box, results read like an eval log. */
 :root {
   --paper: #f1f3f6;
   --surface: #ffffff;
@@ -18,22 +40,20 @@
   --line: #d6dbe3;
   --box: #c8235f;
   --box-ink: #ffffff;
-  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Be Vietnam Pro", "Helvetica Neue", Arial, sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root {
     --paper: #0e1218; --surface: #151a23; --ink: #e5e9ef; --muted: #96a0b1;
     --line: #262d3a; --box: #ff6596; --box-ink: #1a0a11; color-scheme: dark;
   }
 }
-:root[data-theme="dark"] {
-  --paper: #0e1218; --surface: #151a23; --ink: #e5e9ef; --muted: #96a0b1;
-  --line: #262d3a; --box: #ff6596; --box-ink: #1a0a11; color-scheme: dark;
-}
 
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--paper);
@@ -41,31 +61,101 @@ body {
   font: 400 1rem/1.65 var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
-.wrap {
-  max-width: 62rem;
-  margin: 0 auto;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 4.5rem 3rem;
-  display: grid;
-  gap: 4.5rem;
-}
+img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration-color: var(--box); text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 a:hover { color: var(--box); }
 :focus-visible { outline: 2px solid var(--box); outline-offset: 3px; border-radius: 2px; }
 h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
 p { margin: 0; }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ---------- Top bar ---------- */
+.topbar { border-bottom: 1px solid var(--line); }
+.topbar .inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding-block: 0.9rem;
+}
+.brand { font: 700 1rem/1 var(--font-display); text-decoration: none; letter-spacing: -0.01em; }
+.brand span { color: var(--box); }
+.nav { display: flex; align-items: center; gap: 1.25rem; }
+.nav-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; font-size: 0.9rem; color: var(--muted); }
+.nav-links a:hover { color: var(--ink); }
+.lang {
+  display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden;
+  font: 500 0.75rem/1 var(--font-mono);
+}
+.lang button {
+  font: inherit; border: 0; background: transparent; color: var(--muted);
+  padding: 0.5em 0.7em; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* ---------- Main ---------- */
+main.inner { padding-block: 4rem 3rem; display: grid; gap: 4.5rem; }
 
 /* ---------- Hero ---------- */
-.hero { display: grid; gap: 1.75rem; }
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 14rem;
+  gap: 2rem 3rem;
+  align-items: end;
+}
+.hero-text { display: grid; gap: 1.5rem; min-width: 0; }
+.status {
+  justify-self: start;
+  display: inline-flex; align-items: center; gap: 0.55em;
+  font: 500 0.75rem/1 var(--font-mono);
+  padding: 0.5em 0.8em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+.status::before {
+  content: ""; width: 0.55em; height: 0.55em; border-radius: 50%;
+  background: #1f9d55; box-shadow: 0 0 0 3px color-mix(in srgb, #1f9d55 25%, transparent);
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 8.5vw, 5.2rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.role {
+  font: 500 0.8rem/1.4 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+.lede { font-size: 1.15rem; line-height: 1.6; max-width: 36em; }
+.links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  padding: 0.6em 1em;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font: 500 0.9rem/1 var(--font-body);
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--box); color: var(--ink); }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn.primary:hover { background: var(--box); border-color: var(--box); color: var(--box-ink); }
+.btn .mono { font-size: 0.85em; opacity: 0.75; }
+
 .det {
   position: relative;
-  justify-self: start;
-  max-width: 100%;
-  padding: 0.35em 0.45em 0.2em;
-  border: 2px solid var(--box);
   margin-top: 1.6rem;
+  border: 2px solid var(--box);
+  padding: 6px;
   animation: lock 0.7s cubic-bezier(.2,.8,.2,1) both;
 }
 .det-label {
@@ -77,40 +167,25 @@ p { margin: 0; }
   padding: 0.35em 0.55em;
   white-space: nowrap;
 }
-.det h1 {
-  font-size: clamp(2.6rem, 9vw, 5.6rem);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.035em;
+.photo {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-width: 100%;
+  background: var(--surface);
+  display: grid; place-items: center;
+  overflow: hidden;
 }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo .initials { font: 800 3.5rem/1 var(--font-display); color: var(--line); letter-spacing: -0.04em; }
+.photo.has-img .initials { display: none; }
+.photo:not(.has-img) img { display: none; }
 @keyframes lock {
-  from { transform: scale(1.04); border-color: transparent; }
+  from { transform: scale(1.05); border-color: transparent; }
   to { transform: scale(1); }
 }
-.role {
-  font: 500 0.8rem/1.4 var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-}
-.lede { font-size: 1.2rem; line-height: 1.55; max-width: 38em; }
-.links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5em;
-  padding: 0.55em 0.95em;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--ink);
-  font: 500 0.9rem/1 var(--font-body);
-  text-decoration: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.btn:hover { border-color: var(--box); color: var(--ink); }
-.btn .mono { font-size: 0.85em; color: var(--muted); }
 
 /* ---------- Section frame ---------- */
-section { display: grid; gap: 1.5rem; }
+section { display: grid; gap: 1.5rem; scroll-margin-top: 1.5rem; }
 .eyebrow {
   font: 500 0.75rem/1 var(--font-mono);
   text-transform: uppercase;
@@ -132,26 +207,22 @@ section > h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 700; letter-s
   border-bottom: 1px solid var(--line);
 }
 .result-what { min-width: 0; }
-.result-what strong { font-weight: 600; }
+.result-what strong { font-weight: 600; display: block; }
 .result-what span { display: block; color: var(--muted); font-size: 0.9rem; }
 .result-delta { font-size: 1.05rem; white-space: nowrap; text-align: right; }
-.result-delta .from { color: var(--muted); }
-.result-delta .arrow { color: var(--muted); padding-inline: 0.35em; }
+.result-delta .from, .result-delta .arrow { color: var(--muted); }
+.result-delta .arrow { padding-inline: 0.35em; }
 .result-delta .to { color: var(--box); font-weight: 500; }
 
 /* ---------- Experience ---------- */
 .jobs { display: grid; gap: 2.5rem; }
-.job {
-  display: grid;
-  grid-template-columns: 11rem minmax(0, 1fr);
-  gap: 0.4rem 2rem;
-}
+.job { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.4rem 2rem; }
 .job-when { font: 400 0.85rem/1.6 var(--font-mono); color: var(--muted); padding-top: 0.2rem; }
 .job-body { min-width: 0; display: grid; gap: 0.6rem; }
 .job h3 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
 .job-title { color: var(--muted); font-style: italic; }
-.job ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; max-width: 44em; }
-.job li::marker { color: var(--box); }
+.job ul:not(.tags) { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.4rem; max-width: 44em; }
+.job ul:not(.tags) li::marker { color: var(--box); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0.2rem 0 0; }
 .tags li {
   font: 400 0.75rem/1 var(--font-mono);
@@ -165,12 +236,13 @@ section > h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 700; letter-s
 .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .project {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  align-content: start;
   gap: 0.75rem;
   padding: 1.25rem 1.25rem 1.1rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 8px;
+  min-width: 0;
 }
 .project-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
 .project h3 { font-size: 1.1rem; font-weight: 700; }
@@ -179,7 +251,22 @@ section > h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 700; letter-s
 .project-when { font: 400 0.75rem/1 var(--font-mono); color: var(--muted); white-space: nowrap; }
 .project p { color: var(--muted); font-size: 0.95rem; }
 .project .metric { color: var(--ink); font-family: var(--font-mono); font-size: 0.85rem; }
-.project.feature { grid-column: 1 / -1; }
+.project.feature { grid-column: 1 / -1; gap: 1rem; }
+
+/* RAG pipeline */
+.pipeline {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.3rem;
+  list-style: none; margin: 0; padding: 0.9rem; border: 1px dashed var(--line); border-radius: 6px;
+  font: 400 0.8rem/1 var(--font-mono);
+}
+.pipeline li { display: inline-flex; align-items: center; gap: 0.3rem; }
+.pipeline li + li::before { content: "\2192"; color: var(--muted); }
+.pipeline b {
+  font-weight: 500; padding: 0.45em 0.6em; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--paper); color: var(--ink);
+}
+.pipeline .loop b { border-color: var(--box); color: var(--box); }
+.pipeline-note { font-size: 0.85rem; }
 
 /* ---------- Two-column bottom ---------- */
 .split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
@@ -192,83 +279,114 @@ section > h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); font-weight: 700; letter-s
 .skills dt { font: 500 0.75rem/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .skills dd { margin: 0; }
 
-/* ---------- Footer ---------- */
-footer {
+/* ---------- Contact ---------- */
+.contact {
   border-top: 2px solid var(--box);
-  padding-top: 1.5rem;
-  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;
+  padding-top: 2rem;
+  display: grid; gap: 1.25rem;
 }
-footer p { font-size: 1.1rem; max-width: 30em; }
-.small { font-size: 0.8rem; color: var(--muted); }
+.contact h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.025em; max-width: 18em; }
+.contact p { color: var(--muted); max-width: 36em; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; font-size: 0.8rem; color: var(--muted); padding-top: 1rem; }
 
-@media (max-width: 720px) {
-  .wrap { gap: 3.5rem; padding-block: 3.5rem 2.5rem; }
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  main.inner { gap: 3.5rem; padding-block: 2.5rem; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero .det { order: -1; width: 9.5rem; }
   .job { grid-template-columns: minmax(0, 1fr); }
   .projects, .split { grid-template-columns: minmax(0, 1fr); }
   .result { grid-template-columns: minmax(0, 1fr); }
   .result-delta { text-align: left; }
 }
-@media (prefers-reduced-motion: reduce) { .det { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .det { animation: none; }
+}
 </style>
 </head>
 <body>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="#top">Lam Tan Duy<span>.</span></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#results" data-i18n="nav.results">Results</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" id="lang-vi" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+    </nav>
+  </div>
+</header>
 
-<main class="wrap">
-  <header class="hero">
-    <div class="det">
-      <span class="det-label">ai_engineer 0.98</span>
+<main class="inner" id="top">
+  <div class="hero">
+    <div class="hero-text">
+      <span class="status" data-i18n="hero.status">Open to AI Engineer roles</span>
       <h1>Lam Tan Duy</h1>
+      <p class="role" data-i18n="hero.role">AI Engineer &middot; Ho Chi Minh City</p>
+      <p class="lede" data-i18n="hero.lede">I build AI systems that run in production. For two years that has meant computer vision on factory lines: detection models on GPUs and Jetson boards, checking thousands of devices a day. Now I bring the same habits to LLM work: RAG, agents and fine-tuning, measured before and after every change.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:lamtanduy1605@gmail.com" data-i18n="hero.email">Email me</a>
+        <a class="btn" href="https://github.com/lmtndy" target="_blank" rel="noopener">GitHub <span class="mono">lmtndy</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/duy-l%C3%A2m-9b45a3234/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <p class="role">AI Engineer &middot; Ho Chi Minh City</p>
-    <p class="lede">I build AI systems that run in production. For two years that has meant computer vision on factory lines: detection models on GPUs and Jetson boards, checking thousands of devices a day. Now I bring the same habits to LLM work: RAG, agents and fine-tuning, measured before and after every change.</p>
-    <div class="links">
-      <a class="btn" href="https://github.com/lmtndy" target="_blank" rel="noopener">GitHub <span class="mono">lmtndy</span></a>
-      <a class="btn" href="https://www.linkedin.com/in/duy-l%C3%A2m-9b45a3234/" target="_blank" rel="noopener">LinkedIn</a>
-      <button class="btn" type="button" id="copy-email" data-email="lamtanduy1605@gmail.com">Email <span class="mono" id="copy-email-label">lamtanduy1605@gmail.com</span></button>
+    <div class="det" aria-hidden="true">
+      <span class="det-label">person 0.99</span>
+      <div class="photo" id="photo">
+        <img src="profile.jpg" alt="" width="400" height="500" onload="this.parentNode.classList.add('has-img')">
+        <span class="initials">LTD</span>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <section aria-labelledby="results-h">
-    <div class="eyebrow">Before &rarr; after</div>
-    <h2 id="results-h">Measured results</h2>
+  <section id="results" aria-labelledby="results-h">
+    <div class="eyebrow" data-i18n="results.eyebrow">Before &rarr; after</div>
+    <h2 id="results-h" data-i18n="results.title">Measured results</h2>
     <div class="results">
       <div class="result">
-        <div class="result-what"><strong>Missed phones on a 5G inspection line</strong><span>RF-DETR + Grounding DINO replaced YOLOv8 across 5 stations, ~1,000 phones/day</span></div>
+        <div class="result-what" data-i18n="r1"><strong>Missed phones on a 5G inspection line</strong><span>RF-DETR + Grounding DINO replaced YOLOv8 across 5 stations, ~1,000 phones/day</span></div>
         <div class="result-delta mono"><span class="from">~15%</span><span class="arrow">&rarr;</span><span class="to">~0%</span></div>
       </div>
       <div class="result">
-        <div class="result-what"><strong>Recall on a gateway manufacturing line</strong><span>~12,000 units over 3 months, 96% precision after rule-based filtering</span></div>
+        <div class="result-what" data-i18n="r2"><strong>Recall on a gateway manufacturing line</strong><span>~12,000 units over 3 months, 96% precision after rule-based filtering</span></div>
         <div class="result-delta mono"><span class="to">100%</span></div>
       </div>
       <div class="result">
-        <div class="result-what"><strong>Line throughput</strong><span>Fixture-misposition detection triggers an automatic robot retry</span></div>
+        <div class="result-what" data-i18n="r3"><strong>Line throughput</strong><span>Fixture-misposition detection triggers an automatic robot retry</span></div>
         <div class="result-delta mono"><span class="from">20</span><span class="arrow">&rarr;</span><span class="to">24 UPH</span></div>
       </div>
       <div class="result">
-        <div class="result-what"><strong>Bent-phone detection, bends &gt; 1 mm</strong><span>An image-processing algorithm replaced a classification model</span></div>
+        <div class="result-what" data-i18n="r4"><strong>Bent-phone detection, bends &gt; 1 mm</strong><span>An image-processing algorithm replaced a classification model</span></div>
         <div class="result-delta mono"><span class="from">60%</span><span class="arrow">&rarr;</span><span class="to">100%</span></div>
       </div>
       <div class="result">
-        <div class="result-what"><strong>RAG retrieval hit@4, UIT-ViQuAD 2.0</strong><span>Cross-encoder reranking on 300 questions; hit@1 went 0.60 &rarr; 0.77</span></div>
+        <div class="result-what" data-i18n="r5"><strong>RAG retrieval hit@4, UIT-ViQuAD 2.0</strong><span>Cross-encoder reranking on 300 questions; hit@1 went 0.60 &rarr; 0.77</span></div>
         <div class="result-delta mono"><span class="from">0.81</span><span class="arrow">&rarr;</span><span class="to">0.88</span></div>
       </div>
       <div class="result">
-        <div class="result-what"><strong>Real-time defect detection speed</strong><span>YOLOv7/v10 with TensorRT on two camera streams, objects down to 0.2 mm</span></div>
+        <div class="result-what" data-i18n="r6"><strong>Real-time defect detection speed</strong><span>YOLOv7/v10 with TensorRT on two camera streams, objects down to 0.2 mm</span></div>
         <div class="result-delta mono"><span class="from">2</span><span class="arrow">&rarr;</span><span class="to">5 FPS</span></div>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="exp-h">
-    <div class="eyebrow">Experience</div>
-    <h2 id="exp-h">Where I've worked</h2>
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="eyebrow" data-i18n="exp.eyebrow">Experience</div>
+    <h2 id="exp-h" data-i18n="exp.title">Where I've worked</h2>
     <div class="jobs">
       <article class="job">
-        <div class="job-when">Mar 2025 &ndash; now</div>
+        <div class="job-when" data-i18n="j1.when">Mar 2025 &ndash; now</div>
         <div class="job-body">
           <h3>Greystone Data Systems Vietnam</h3>
-          <p class="job-title">Machine Learning Engineer, lead on 3 production projects in an 11-person ML team</p>
-          <ul>
+          <p class="job-title" data-i18n="j1.title">Machine Learning Engineer, lead on 3 production projects in an 11-person ML team</p>
+          <ul data-i18n="j1.list">
             <li>Trained and shipped 100+ model updates for 30+ computer-vision features across 4 client projects, served with NVIDIA Triton Inference Server behind Python services.</li>
             <li>Sole ML engineer on a gateway manufacturing line: RF-DETR detection at every camera step of 16 Shield Box and 32 flash stations.</li>
             <li>Built a door-state model with a retraining loop (about 50 labeled images per round, redeployed in about 5 hours) and camera QR reading that replaced handheld scanning.</li>
@@ -278,11 +396,11 @@ footer p { font-size: 1.1rem; max-width: 30em; }
         </div>
       </article>
       <article class="job">
-        <div class="job-when">Nov 2024 &ndash; Mar 2025</div>
+        <div class="job-when" data-i18n="j2.when">Nov 2024 &ndash; Mar 2025</div>
         <div class="job-body">
           <h3>Hondaplus Vietnam</h3>
           <p class="job-title">AI Engineer</p>
-          <ul>
+          <ul data-i18n="j2.list">
             <li>AIoT defect detection with YOLOv7/YOLOv10 and TensorRT over WebSocket, flagging mislabeled products and foreign objects, with ESP32 alarms and Telegram alerts.</li>
             <li>Dust and hair detection for a pharmaceutical line: YOLOX (mAP50-95 0.70) on Jetson Orin, 4 Basler cameras in real time, objects as small as 0.03 mm.</li>
           </ul>
@@ -290,11 +408,11 @@ footer p { font-size: 1.1rem; max-width: 30em; }
         </div>
       </article>
       <article class="job">
-        <div class="job-when">Sep 2024 &ndash; Nov 2024</div>
+        <div class="job-when" data-i18n="j3.when">Sep 2024 &ndash; Nov 2024</div>
         <div class="job-body">
           <h3>FPT Telecom International</h3>
           <p class="job-title">AI Engineer Intern</p>
-          <ul>
+          <ul data-i18n="j3.list">
             <li>Trained YOLO detectors for accessory components and fine-tuned PaddleOCR for small printed text on phone chargers.</li>
             <li>Built an automated labeling and retraining workflow with n8n, with experiment tracking.</li>
           </ul>
@@ -304,24 +422,34 @@ footer p { font-size: 1.1rem; max-width: 30em; }
     </div>
   </section>
 
-  <section aria-labelledby="proj-h">
-    <div class="eyebrow">Open source</div>
-    <h2 id="proj-h">Projects</h2>
+  <section id="projects" aria-labelledby="proj-h">
+    <div class="eyebrow" data-i18n="proj.eyebrow">Open source</div>
+    <h2 id="proj-h" data-i18n="proj.title">Projects</h2>
     <div class="projects">
       <article class="project feature">
         <div class="project-head">
           <h3><a href="https://github.com/lmtndy/vietnamese-agentic-rag" target="_blank" rel="noopener">Vietnamese Agentic RAG</a></h3>
           <span class="project-when">2026</span>
         </div>
-        <p>Question answering over Vietnamese documents with source citations. A LangGraph agent routes each query, grades the retrieved context and rewrites the query when retrieval fails. Three chunk-size runs tracked in MLflow; the API and Qdrant ship with Docker Compose, with tests and the image build in CI on every push.</p>
-        <ul class="tags"><li>LangGraph</li><li>Qdrant</li><li>Cross-encoder rerank</li><li>FastAPI</li><li>MLflow</li><li>GitHub Actions</li></ul>
+        <p data-i18n="p1.desc">Question answering over Vietnamese documents with source citations. A LangGraph agent routes each query, grades the retrieved context and rewrites the query when retrieval fails. Three chunk-size runs tracked in MLflow; the API and Qdrant ship with Docker Compose, with tests and the image build in CI on every push.</p>
+        <ol class="pipeline" aria-label="Pipeline">
+          <li><b>query</b></li>
+          <li><b>route</b></li>
+          <li><b>Qdrant top-k</b></li>
+          <li><b>rerank</b></li>
+          <li><b>grade</b></li>
+          <li class="loop"><b>rewrite &#8635;</b></li>
+          <li><b>answer + citations</b></li>
+        </ol>
+        <p class="pipeline-note" data-i18n="p1.note">If the graded context is weak, the agent rewrites the query and retrieves again, with a bounded number of retries.</p>
+        <ul class="tags"><li>LangGraph</li><li>Qdrant</li><li>Cross-encoder</li><li>FastAPI</li><li>MLflow</li><li>Docker</li><li>GitHub Actions</li></ul>
       </article>
       <article class="project">
         <div class="project-head">
           <h3><a href="https://github.com/lmtndy/qwen-qlora-vietnamese" target="_blank" rel="noopener">Qwen2.5 QLoRA Fine-tuning</a></h3>
           <span class="project-when">2026</span>
         </div>
-        <p>QLoRA fine-tuning of Qwen2.5-1.5B-Instruct for Vietnamese text classification on a single 11 GB GPU, with a class-balanced synthetic data generator.</p>
+        <p data-i18n="p2.desc">QLoRA fine-tuning of Qwen2.5-1.5B-Instruct for Vietnamese text classification on a single 11 GB GPU, with a class-balanced synthetic data generator.</p>
         <p class="metric">4-bit NF4 &middot; LoRA r=16 &middot; adapter 20 MB</p>
       </article>
       <article class="project">
@@ -329,30 +457,30 @@ footer p { font-size: 1.1rem; max-width: 30em; }
           <h3><a href="https://github.com/lmtndy/Real-time-fire-detection" target="_blank" rel="noopener">Real-time Fire Detection</a></h3>
           <span class="project-when">2024&ndash;25</span>
         </div>
-        <p>Team course project at HCMUT. YOLOv8n trained on a 21.5k-image fire and smoke dataset, wired to an ESP32 alarm and Telegram alerts.</p>
+        <p data-i18n="p3.desc">Team course project at HCMUT. YOLOv8n trained on a 21.5k-image fire and smoke dataset, wired to an ESP32 alarm and Telegram alerts.</p>
         <p class="metric">mAP@50 0.788 &middot; 1.9 ms/image on T4</p>
       </article>
       <article class="project">
         <div class="project-head">
           <h3><a href="https://github.com/lmtndy/detectCarWrongDirection" target="_blank" rel="noopener">Wrong-direction Vehicles</a></h3>
         </div>
-        <p>Detects and tracks wrong-way vehicles across multiple lanes.</p>
+        <p data-i18n="p4.desc">Detects and tracks wrong-way vehicles across multiple lanes.</p>
         <p class="metric">YOLOv11 &middot; SAM &middot; Supervision</p>
       </article>
       <article class="project">
         <div class="project-head">
           <h3><a href="https://github.com/lmtndy/sam2_project" target="_blank" rel="noopener">SAM 2 on OpenVINO</a></h3>
         </div>
-        <p>Exports the SAM 2 image encoder and mask decoder to OpenVINO IR for CPU inference.</p>
+        <p data-i18n="p5.desc">Exports the SAM 2 image encoder and mask decoder to OpenVINO IR for CPU inference.</p>
         <p class="metric">SAM 2 &middot; OpenVINO</p>
       </article>
     </div>
   </section>
 
   <div class="split">
-    <section aria-labelledby="pub-h">
-      <div class="eyebrow">Research</div>
-      <h2 id="pub-h">Publications</h2>
+    <section id="research" aria-labelledby="pub-h">
+      <div class="eyebrow" data-i18n="pub.eyebrow">Research</div>
+      <h2 id="pub-h" data-i18n="pub.title">Publications</h2>
       <ul class="pubs">
         <li>
           <a href="https://www.sciencedirect.com/science/article/pii/S2352340925007619" target="_blank" rel="noopener">VNWoodKnot: A High-Quality Image Dataset for Wood Knot Detection and Classification</a>
@@ -360,50 +488,133 @@ footer p { font-size: 1.1rem; max-width: 30em; }
         </li>
         <li>
           <span>A Robust Ensemble Framework for Helmet Usage Classification in Real-World Scenarios</span>
-          <span class="venue">T. D. Lam, T. Le &middot; CTU Journal of Innovation and Sustainable Development, in press</span>
+          <span class="venue" data-i18n="pub2.venue">T. D. Lam, T. Le &middot; CTU Journal of Innovation and Sustainable Development, in press</span>
         </li>
       </ul>
     </section>
-    <section aria-labelledby="skills-h">
-      <div class="eyebrow">Toolbox</div>
-      <h2 id="skills-h">Skills</h2>
+    <section id="skills" aria-labelledby="skills-h">
+      <div class="eyebrow" data-i18n="skills.eyebrow">Toolbox</div>
+      <h2 id="skills-h" data-i18n="skills.title">Skills</h2>
       <dl class="skills">
         <div><dt>LLM &amp; GenAI</dt><dd>RAG with reranking, LangGraph agents, QLoRA / PEFT / TRL, Qdrant, FAISS</dd></div>
         <div><dt>Computer vision</dt><dd>YOLOv7&ndash;v11, YOLOX, RF-DETR, Grounding DINO, SAM, PaddleOCR, tracking</dd></div>
         <div><dt>Serving &amp; MLOps</dt><dd>Triton, TensorRT, ONNX, Docker, MLflow, FastAPI, GitHub Actions</dd></div>
         <div><dt>Edge</dt><dd>NVIDIA Jetson Nano / Orin, Basler cameras, ESP32</dd></div>
-        <div><dt>Education</dt><dd>B.Sc. Data Science, Ho Chi Minh City University of Technology, 2021&ndash;2025 &middot; TOEIC 765</dd></div>
+        <div><dt data-i18n="skills.edu">Education</dt><dd data-i18n="skills.edu.v">B.Sc. Data Science, Ho Chi Minh City University of Technology, 2021&ndash;2025</dd></div>
+        <div><dt data-i18n="skills.lang">Languages</dt><dd data-i18n="skills.lang.v">English, TOEIC 765; Vietnamese, native</dd></div>
       </dl>
     </section>
   </div>
 
-  <footer>
-    <p>Open to AI Engineer roles in LLM systems, RAG and applied ML. The fastest way to reach me is email.</p>
-    <span class="small mono">&copy; 2026 Lam Tan Duy</span>
-  </footer>
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" data-i18n="contact.title">Hiring for LLM systems, RAG or applied ML?</h2>
+    <p data-i18n="contact.body">I reply to email within a day. I'm based in Ho Chi Minh City and work comfortably with international teams in English.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:lamtanduy1605@gmail.com">lamtanduy1605@gmail.com</a>
+      <button class="btn" type="button" id="copy-email" data-i18n="contact.copy">Copy email</button>
+    </div>
+    <div class="foot">
+      <span>&copy; 2026 Lam Tan Duy</span>
+      <span class="mono">lmtndy.github.io</span>
+    </div>
+  </section>
 </main>
 
 <script>
 (function () {
-  var btn = document.getElementById('copy-email');
-  var label = document.getElementById('copy-email-label');
-  var email = btn.getAttribute('data-email');
-  function selectLabel() {
-    var r = document.createRange();
-    r.selectNodeContents(label);
-    var s = window.getSelection();
-    s.removeAllRanges();
-    s.addRange(r);
+  var VI = {
+    "nav.results": "Kết quả",
+    "nav.experience": "Kinh nghiệm",
+    "nav.projects": "Dự án",
+    "nav.contact": "Liên hệ",
+    "hero.status": "Đang tìm vị trí AI Engineer",
+    "hero.role": "Kỹ sư AI &middot; TP. Hồ Chí Minh",
+    "hero.lede": "Tôi xây dựng hệ thống AI chạy thật trong sản xuất. Hai năm qua, đó là computer vision trên dây chuyền nhà máy: mô hình detection chạy trên GPU và Jetson, kiểm tra hàng nghìn thiết bị mỗi ngày. Giờ tôi mang cùng cách làm đó sang LLM: RAG, agent và fine-tuning, đo lường trước và sau mỗi thay đổi.",
+    "hero.email": "Gửi email",
+    "results.eyebrow": "Trước &rarr; sau",
+    "results.title": "Kết quả đo được",
+    "r1": "<strong>Tỉ lệ bỏ sót điện thoại trên dây chuyền kiểm tra 5G</strong><span>RF-DETR + Grounding DINO thay YOLOv8 trên 5 trạm, khoảng 1.000 máy mỗi ngày</span>",
+    "r2": "<strong>Recall trên dây chuyền sản xuất gateway</strong><span>Khoảng 12.000 sản phẩm trong 3 tháng, precision 96% sau bộ lọc rule-based</span>",
+    "r3": "<strong>Năng suất dây chuyền</strong><span>Phát hiện lệch fixture và tự động cho robot thử lại</span>",
+    "r4": "<strong>Phát hiện điện thoại bị cong trên 1 mm</strong><span>Thuật toán xử lý ảnh thay cho mô hình phân loại</span>",
+    "r5": "<strong>RAG retrieval hit@4, UIT-ViQuAD 2.0</strong><span>Rerank bằng cross-encoder trên 300 câu hỏi; hit@1 tăng 0.60 &rarr; 0.77</span>",
+    "r6": "<strong>Tốc độ phát hiện lỗi thời gian thực</strong><span>YOLOv7/v10 + TensorRT trên 2 luồng camera, vật thể nhỏ tới 0,2 mm</span>",
+    "exp.eyebrow": "Kinh nghiệm",
+    "exp.title": "Nơi tôi đã làm việc",
+    "j1.when": "03/2025 &ndash; nay",
+    "j1.title": "Machine Learning Engineer, phụ trách chính 3 dự án production trong team ML 11 người",
+    "j1.list": "<li>Huấn luyện và triển khai hơn 100 lần cập nhật mô hình cho hơn 30 tính năng computer vision trên 4 dự án khách hàng, phục vụ bằng NVIDIA Triton Inference Server sau các service Python.</li><li>Kỹ sư ML duy nhất của dây chuyền sản xuất gateway: RF-DETR detection ở mọi bước camera của 16 trạm Shield Box và 32 trạm flash.</li><li>Xây dựng mô hình nhận trạng thái cửa với vòng lặp huấn luyện lại (khoảng 50 ảnh gán nhãn mỗi vòng, triển khai lại trong khoảng 5 giờ) và đọc mã QR bằng camera thay cho máy quét cầm tay.</li><li>Hướng dẫn thực tập sinh và kỹ sư mới về MLOps, triển khai Triton và debug production; trình bày kết quả cho khách hàng quốc tế bằng tiếng Anh.</li>",
+    "j2.when": "11/2024 &ndash; 03/2025",
+    "j2.list": "<li>Hệ thống AIoT phát hiện lỗi với YOLOv7/YOLOv10 và TensorRT qua WebSocket, phát hiện sản phẩm dán sai nhãn và dị vật, có còi báo ESP32 và cảnh báo Telegram.</li><li>Phát hiện bụi và tóc cho dây chuyền dược phẩm: YOLOX (mAP50-95 0.70) trên Jetson Orin, 4 camera Basler thời gian thực, dị vật nhỏ tới 0,03 mm.</li>",
+    "j3.when": "09/2024 &ndash; 11/2024",
+    "j3.list": "<li>Huấn luyện YOLO phát hiện linh kiện phụ kiện và fine-tune PaddleOCR đọc chữ in nhỏ trên củ sạc điện thoại.</li><li>Xây dựng quy trình tự động gán nhãn và huấn luyện lại bằng n8n, có theo dõi thí nghiệm.</li>",
+    "proj.eyebrow": "Mã nguồn mở",
+    "proj.title": "Dự án",
+    "p1.desc": "Hỏi đáp trên tài liệu tiếng Việt, có trích dẫn nguồn. Agent LangGraph định tuyến từng câu hỏi, chấm điểm ngữ cảnh truy xuất được và viết lại câu hỏi khi truy xuất thất bại. Ba lần thử kích thước chunk được theo dõi trong MLflow; API và Qdrant đóng gói bằng Docker Compose, test và build image chạy CI mỗi lần push.",
+    "p1.note": "Nếu ngữ cảnh bị chấm điểm thấp, agent viết lại câu hỏi và truy xuất lại, với số lần thử có giới hạn.",
+    "p2.desc": "Fine-tune Qwen2.5-1.5B-Instruct bằng QLoRA để phân loại văn bản tiếng Việt trên một GPU 11 GB, kèm bộ sinh dữ liệu tổng hợp cân bằng giữa các lớp.",
+    "p3.desc": "Đồ án nhóm tại ĐH Bách Khoa TP.HCM. YOLOv8n huấn luyện trên bộ dữ liệu 21.500 ảnh lửa và khói, nối với còi báo ESP32 và cảnh báo Telegram.",
+    "p4.desc": "Phát hiện và theo dõi xe đi ngược chiều trên nhiều làn đường.",
+    "p5.desc": "Xuất image encoder và mask decoder của SAM 2 sang OpenVINO IR để chạy trên CPU.",
+    "pub.eyebrow": "Nghiên cứu",
+    "pub.title": "Bài báo",
+    "pub2.venue": "T. D. Lam, T. Le &middot; CTU Journal of Innovation and Sustainable Development, đang in",
+    "skills.eyebrow": "Công cụ",
+    "skills.title": "Kỹ năng",
+    "skills.edu": "Học vấn",
+    "skills.edu.v": "Cử nhân Khoa học Dữ liệu, ĐH Bách Khoa TP.HCM, 2021&ndash;2025",
+    "skills.lang": "Ngoại ngữ",
+    "skills.lang.v": "Tiếng Anh, TOEIC 765; tiếng Việt, bản ngữ",
+    "contact.title": "Bạn đang tuyển cho mảng LLM, RAG hoặc applied ML?",
+    "contact.body": "Tôi trả lời email trong vòng một ngày. Tôi ở TP. Hồ Chí Minh và làm việc tốt với team quốc tế bằng tiếng Anh.",
+    "contact.copy": "Sao chép email"
+  };
+  var META = {
+    en: { title: "Lam Tan Duy · AI Engineer", copied: "Copied" },
+    vi: { title: "Lâm Tấn Duy · Kỹ sư AI", copied: "Đã sao chép" }
+  };
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var EN = {};
+  nodes.forEach(function (n) { EN[n.getAttribute("data-i18n")] = n.innerHTML; });
+  var current = "en";
+
+  function apply(lang) {
+    var dict = lang === "vi" ? VI : EN;
+    nodes.forEach(function (n) {
+      var v = dict[n.getAttribute("data-i18n")];
+      if (v !== undefined) n.innerHTML = v;
+    });
+    document.documentElement.lang = lang;
+    document.title = META[lang].title;
+    document.querySelectorAll(".lang button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
+    });
+    current = lang;
+    try { localStorage.setItem("lang", lang); } catch (e) {}
   }
-  btn.addEventListener('click', function () {
-    var done = function () {
-      label.textContent = 'Copied';
-      setTimeout(function () { label.textContent = email; }, 1600);
-    };
-    try {
-      navigator.clipboard.writeText(email).then(done, selectLabel);
-    } catch (e) { selectLabel(); }
+
+  document.querySelectorAll(".lang button").forEach(function (b) {
+    b.addEventListener("click", function () { apply(b.getAttribute("data-lang")); });
   });
+
+  var saved = null;
+  try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (location.hash === "#vi") saved = "vi";
+  if (saved === "vi") apply("vi");
+
+  var copy = document.getElementById("copy-email");
+  copy.addEventListener("click", function () {
+    var email = "lamtanduy1605@gmail.com";
+    var done = function () {
+      copy.textContent = META[current].copied;
+      setTimeout(function () { copy.innerHTML = (current === "vi" ? VI : EN)["contact.copy"]; }, 1600);
+    };
+    if (navigator.clipboard) navigator.clipboard.writeText(email).then(done, function () {});
+  });
+
+  // Show initials when profile.jpg has not been added yet.
+  var img = document.querySelector("#photo img");
+  if (img.complete && img.naturalWidth) img.parentNode.classList.add("has-img");
 })();
 </script>
 </body>
